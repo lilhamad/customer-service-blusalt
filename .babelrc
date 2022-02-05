@@ -1,0 +1,31 @@
+{
+  "presets": [
+    [
+    "@babel/preset-env",
+    {
+        "targets": {
+            "node": "current"
+        }
+    }]
+    ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-object-rest-spread",
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./"
+        ],
+        "alias": {
+          "@app": "./server/app",
+          "@utilities": "./server/utilities",
+          "@config": "./server/config",
+          "@services": "./server/services",
+          "@db": "./server/infrastructure",
+          "@middlewares": "./server/middlewares"
+        }
+      }
+    ]
+  ]
+}

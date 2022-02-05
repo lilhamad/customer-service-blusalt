@@ -1,0 +1,59 @@
+{
+  "name": "settlement-automation-api",
+  "version": "1.0.0",
+  "description": "Automation Of Card Transaction Settlement",
+  "main": "server/app.js",
+  "scripts": {
+    "migrate": "./node_modules/.bin/sequelize db:migrate",
+    "migrate:undo:last": "./node_modules/.bin/sequelize db:migrate:undo",
+    "migration:create": "./node_modules/.bin/sequelize migration:create --name added-unique-to-transaction",
+    "build": "npm run clean && babel server --ignore server/tests -d dist",
+    "clean": "rimraf dist",
+    "start": "node ./dist/app.js",
+    "start:dev": "cross-env NODE_ENV=development && nodemon server/app.js --exec babel-node",
+    "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --timeout 10000 ./server/**/*.test.js --exit",
+    "testFile": "nodemon testFile.js"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "Adewale Abdulhammed",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "@babel/runtime": "^7.12.1",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/joi-date": "^2.0.1",
+    "amqplib": "^0.6.0",
+    "axios": "^0.20.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "joi": "^17.2.1",
+    "moment": "^2.29.1",
+    "mysql2": "^2.2.5",
+    "node-cron": "^2.0.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.6",
+    "rimraf": "^3.0.2"
+  }
+}
