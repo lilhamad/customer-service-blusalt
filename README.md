@@ -1,7 +1,9 @@
 # Customer Service
 
 Backend technology used : Node.js/Express.js
+
 service-to-service communication used : RabbitMQ  
+
 //
 run service
 npm run start:dev
