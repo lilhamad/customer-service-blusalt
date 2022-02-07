@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   
   
   app.listen(PORT, () => {
-    console.log(`Server running, alive`);
+    console.log(`Server running, ${PORT}`);
   });
   
   cron.schedule('* * * * *', async() => {
