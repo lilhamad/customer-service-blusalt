@@ -2,12 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import helmet from 'helmet';
-import './config';
-import { Response } from '@utilities';
 import customerRoutes from './routes/customerRoutes';
 const fileUpload = require('express-fileupload');
 var cron = require('node-cron');
 import customerController from './controllers/customerController';
+import { Response } from './utilities/response';
+
 
 
 const PORT = process.env.PORT || 2000;

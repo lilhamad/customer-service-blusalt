@@ -1,7 +1,7 @@
 {
-  "name": "settlement-automation-api",
+  "name": "customer-service",
   "version": "1.0.0",
-  "description": "Automation Of Card Transaction Settlement",
+  "description": "task service",
   "main": "server/app.js",
   "scripts": {
     "migrate": "./node_modules/.bin/sequelize db:migrate",
@@ -10,7 +10,7 @@
     "build": "npm run clean && babel server --ignore server/tests -d dist",
     "clean": "rimraf dist",
     "start": "node ./dist/app.js",
-    "start:dev": "cross-env NODE_ENV=development && nodemon server/app.js --exec babel-node",
+    "start:dev": "cross-env NODE_ENV=development && node server/app.js --exec babel-node",
     "test": "cross-env NODE_ENV=test mocha --require @babel/register --require @babel/polyfill --timeout 10000 ./server/**/*.test.js --exit",
     "testFile": "nodemon testFile.js"
   },
