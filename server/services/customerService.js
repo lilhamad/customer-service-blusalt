@@ -20,8 +20,7 @@ class customerService {
       } 
     } catch (error) {
       console.log("Request error" + JSON.stringify(error));
-      return { status: false, message : JSON.stringify(error)} //test
-      throw error; //test
+      return { status: false, message : JSON.stringify(error)}
     }
   }
 }
