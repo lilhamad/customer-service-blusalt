@@ -15,10 +15,15 @@ service-to-service communication used : RabbitMQ
 
 - create a database called "customer_db"
 - replace DB_URL in the env file with : your database credentials.
+
   root : your db user
+  
   Admin@1234 : your db password
+  
   billings_db : your db name
+  
   mysql : your dialect
+  
   127.0.0.1 : your db host
 
 Run locally
